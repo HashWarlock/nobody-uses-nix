@@ -293,7 +293,6 @@ Findings (by persona):
 
 Open gaps (must resolve before “Reviewed”):
 - WhatsApp/web QR flow still described but not specified (command + output).
-- `clawdis-setup` wizard is stub-only.
 
 Second pass review (delta):
 - Tightened language to “technically light” and made Telegram-first explicit.
@@ -310,6 +309,5 @@ Implemented in `nix-clawdis` repo:
 - README + Zero-to-Clawdis + Agent Copypasta + Quickstart/Config/Troubleshooting docs
 
 Remaining:
-- Replace `clawdis-setup` stub with real guided flow
 - Validate pnpmDeps hash against current pin
 - Add WhatsApp quickstart once Telegram path is verified
