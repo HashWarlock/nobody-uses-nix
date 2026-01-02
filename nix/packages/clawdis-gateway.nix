@@ -12,7 +12,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "clawdis-gateway";
-  version = "0-unstable-2025-12-28";
+  version = "2.0.0-beta4";
 
   src = fetchFromGitHub sourceInfo;
 
