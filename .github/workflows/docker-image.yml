@@ -26,7 +26,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          curl -fsSL https://install.determinate.systems/nix | sh -s -- install --no-confirm --no-daemon
+          curl -fsSL https://install.determinate.systems/nix | sh -s -- install --no-confirm --nix-build-user-count 1
           if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
             . "$HOME/.nix-profile/etc/profile.d/nix.sh"
           else
