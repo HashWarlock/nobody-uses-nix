@@ -24,7 +24,7 @@ stdenv.mkDerivation (finalAttrs: {
     inherit (finalAttrs) pname version src;
     hash = if pnpmDepsHash != null
       then pnpmDepsHash
-      else "sha256-oGXUm+oftkasXsK+QGlxe0xO7riWHdzpV0oK27lZrLw=";
+      else "sha256-TITqhJhk5cHqCDmeX+KJ1hqt9dEbvJu6vi8xhteYfC4=";
     fetcherVersion = 2;
   };
 
