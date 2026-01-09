@@ -130,7 +130,12 @@ perl -0pi -e "s|url = \"[^\"]+\";|url = \"${app_url}\";|" "$app_file"
 perl -0pi -e "s|hash = \"[^\"]+\";|hash = \"${app_hash}\";|" "$app_file"
 
 log "Building app to validate fetchzip hash"
-nix build .#clawdbot-app --accept-flake-config
+current_system=$(nix eval --impure --raw --expr 'builtins.currentSystem' 2>/dev/null || true)
+if [[ "$current_system" == *darwin* ]]; then
+  nix build .#clawdbot-app --accept-flake-config
+else
+  log "Skipping app build on non-darwin system (${current_system:-unknown})"
+fi
 
 if git diff --quiet; then
   echo "No pin changes detected."
