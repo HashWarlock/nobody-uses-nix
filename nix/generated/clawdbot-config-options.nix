@@ -1243,6 +1243,9 @@ in
           native = lib.mkOption {
             type = t.oneOf [ t.bool t.enum [ "auto" ] ];
           };
+          nativeSkills = lib.mkOption {
+            type = t.oneOf [ t.bool t.enum [ "auto" ] ];
+          };
         }; };
         };
         configWrites = lib.mkOption {
@@ -1446,6 +1449,9 @@ in
       commands = lib.mkOption {
         type = t.submodule { options = {
         native = lib.mkOption {
+          type = t.oneOf [ t.bool t.enum [ "auto" ] ];
+        };
+        nativeSkills = lib.mkOption {
           type = t.oneOf [ t.bool t.enum [ "auto" ] ];
         };
       }; };
@@ -2128,6 +2134,9 @@ in
           native = lib.mkOption {
             type = t.oneOf [ t.bool t.enum [ "auto" ] ];
           };
+          nativeSkills = lib.mkOption {
+            type = t.oneOf [ t.bool t.enum [ "auto" ] ];
+          };
         }; };
         };
         configWrites = lib.mkOption {
@@ -2312,6 +2321,9 @@ in
         native = lib.mkOption {
           type = t.oneOf [ t.bool t.enum [ "auto" ] ];
         };
+        nativeSkills = lib.mkOption {
+          type = t.oneOf [ t.bool t.enum [ "auto" ] ];
+        };
       }; };
       };
       configWrites = lib.mkOption {
@@ -2450,11 +2462,18 @@ in
           type = t.str;
         };
         capabilities = lib.mkOption {
-          type = t.listOf (t.str);
+          type = t.oneOf [ t.listOf (t.str) t.submodule { options = {
+          inlineButtons = lib.mkOption {
+            type = t.enum [ "off" "dm" "group" "all" "allowlist" ];
+          };
+        }; } ];
         };
         commands = lib.mkOption {
           type = t.submodule { options = {
           native = lib.mkOption {
+            type = t.oneOf [ t.bool t.enum [ "auto" ] ];
+          };
+          nativeSkills = lib.mkOption {
             type = t.oneOf [ t.bool t.enum [ "auto" ] ];
           };
         }; };
@@ -2641,11 +2660,18 @@ in
         type = t.str;
       };
       capabilities = lib.mkOption {
-        type = t.listOf (t.str);
+        type = t.oneOf [ t.listOf (t.str) t.submodule { options = {
+        inlineButtons = lib.mkOption {
+          type = t.enum [ "off" "dm" "group" "all" "allowlist" ];
+        };
+      }; } ];
       };
       commands = lib.mkOption {
         type = t.submodule { options = {
         native = lib.mkOption {
+          type = t.oneOf [ t.bool t.enum [ "auto" ] ];
+        };
+        nativeSkills = lib.mkOption {
           type = t.oneOf [ t.bool t.enum [ "auto" ] ];
         };
       }; };
@@ -3014,6 +3040,9 @@ in
       type = t.bool;
     };
     native = lib.mkOption {
+      type = t.oneOf [ t.bool t.enum [ "auto" ] ];
+    };
+    nativeSkills = lib.mkOption {
       type = t.oneOf [ t.bool t.enum [ "auto" ] ];
     };
     restart = lib.mkOption {
