@@ -1436,6 +1436,13 @@ in
         historyLimit = lib.mkOption {
           type = t.int;
         };
+        markdown = lib.mkOption {
+          type = t.submodule { options = {
+          tables = lib.mkOption {
+            type = t.enum [ "off" "bullets" "code" ];
+          };
+        }; };
+        };
         mediaMaxMb = lib.mkOption {
           type = t.int;
         };
@@ -1552,6 +1559,13 @@ in
       };
       historyLimit = lib.mkOption {
         type = t.int;
+      };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
       };
       mediaMaxMb = lib.mkOption {
         type = t.int;
@@ -1758,6 +1772,13 @@ in
         };
         historyLimit = lib.mkOption {
           type = t.int;
+        };
+        markdown = lib.mkOption {
+          type = t.submodule { options = {
+          tables = lib.mkOption {
+            type = t.enum [ "off" "bullets" "code" ];
+          };
+        }; };
         };
         maxLinesPerMessage = lib.mkOption {
           type = t.int;
@@ -1967,6 +1988,13 @@ in
       historyLimit = lib.mkOption {
         type = t.int;
       };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
+      };
       maxLinesPerMessage = lib.mkOption {
         type = t.int;
       };
@@ -2073,6 +2101,13 @@ in
         includeAttachments = lib.mkOption {
           type = t.bool;
         };
+        markdown = lib.mkOption {
+          type = t.submodule { options = {
+          tables = lib.mkOption {
+            type = t.enum [ "off" "bullets" "code" ];
+          };
+        }; };
+        };
         mediaMaxMb = lib.mkOption {
           type = t.int;
         };
@@ -2159,6 +2194,13 @@ in
       includeAttachments = lib.mkOption {
         type = t.bool;
       };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
+      };
       mediaMaxMb = lib.mkOption {
         type = t.int;
       };
@@ -2233,6 +2275,13 @@ in
       };
       historyLimit = lib.mkOption {
         type = t.int;
+      };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
       };
       mediaAllowHosts = lib.mkOption {
         type = t.listOf (t.str);
@@ -2368,6 +2417,13 @@ in
         ignoreStories = lib.mkOption {
           type = t.bool;
         };
+        markdown = lib.mkOption {
+          type = t.submodule { options = {
+          tables = lib.mkOption {
+            type = t.enum [ "off" "bullets" "code" ];
+          };
+        }; };
+        };
         mediaMaxMb = lib.mkOption {
           type = t.int;
         };
@@ -2461,6 +2517,13 @@ in
       };
       ignoreStories = lib.mkOption {
         type = t.bool;
+      };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
       };
       mediaMaxMb = lib.mkOption {
         type = t.int;
@@ -2623,6 +2686,13 @@ in
         };
         historyLimit = lib.mkOption {
           type = t.int;
+        };
+        markdown = lib.mkOption {
+          type = t.submodule { options = {
+          tables = lib.mkOption {
+            type = t.enum [ "off" "bullets" "code" ];
+          };
+        }; };
         };
         mediaMaxMb = lib.mkOption {
           type = t.number;
@@ -2835,6 +2905,13 @@ in
       };
       historyLimit = lib.mkOption {
         type = t.int;
+      };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
       };
       mediaMaxMb = lib.mkOption {
         type = t.number;
@@ -3058,6 +3135,13 @@ in
         historyLimit = lib.mkOption {
           type = t.int;
         };
+        markdown = lib.mkOption {
+          type = t.submodule { options = {
+          tables = lib.mkOption {
+            type = t.enum [ "off" "bullets" "code" ];
+          };
+        }; };
+        };
         mediaMaxMb = lib.mkOption {
           type = t.number;
         };
@@ -3256,6 +3340,13 @@ in
       historyLimit = lib.mkOption {
         type = t.int;
       };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
+      };
       mediaMaxMb = lib.mkOption {
         type = t.number;
       };
@@ -3393,6 +3484,13 @@ in
         historyLimit = lib.mkOption {
           type = t.int;
         };
+        markdown = lib.mkOption {
+          type = t.submodule { options = {
+          tables = lib.mkOption {
+            type = t.enum [ "off" "bullets" "code" ];
+          };
+        }; };
+        };
         mediaMaxMb = lib.mkOption {
           type = t.int;
         };
@@ -3495,6 +3593,13 @@ in
       };
       historyLimit = lib.mkOption {
         type = t.int;
+      };
+      markdown = lib.mkOption {
+        type = t.submodule { options = {
+        tables = lib.mkOption {
+          type = t.enum [ "off" "bullets" "code" ];
+        };
+      }; };
       };
       mediaMaxMb = lib.mkOption {
         type = t.int;
