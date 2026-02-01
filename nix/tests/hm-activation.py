@@ -18,4 +18,11 @@ machine.succeed(f"su - alice -c '{user_env} systemctl --user daemon-reload'")
 machine.succeed(f"su - alice -c '{user_env} systemctl --user start openclaw-gateway.service'")
 machine.wait_for_unit("openclaw-gateway.service", user="alice")
 
-machine.wait_for_open_port(18999)
+try:
+    machine.wait_for_open_port(18999)
+except Exception:
+    machine.succeed(
+        "journalctl --user -u openclaw-gateway.service --no-pager -n 200 || true"
+    )
+    machine.succeed("tail -n 200 /tmp/openclaw/openclaw-gateway.log || true")
+    raise

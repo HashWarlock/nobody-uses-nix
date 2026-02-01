@@ -132,6 +132,10 @@ let
           StandardErrorPath = inst.logPath;
           EnvironmentVariables = {
             HOME = homeDir;
+            OPENCLAW_CONFIG_PATH = inst.configPath;
+            OPENCLAW_STATE_DIR = inst.stateDir;
+            OPENCLAW_IMAGE_BACKEND = "sips";
+            OPENCLAW_NIX_MODE = "1";
             MOLTBOT_CONFIG_PATH = inst.configPath;
             MOLTBOT_STATE_DIR = inst.stateDir;
             MOLTBOT_IMAGE_BACKEND = "sips";
@@ -157,6 +161,9 @@ let
           RestartSec = "1s";
           Environment = [
             "HOME=${homeDir}"
+            "OPENCLAW_CONFIG_PATH=${inst.configPath}"
+            "OPENCLAW_STATE_DIR=${inst.stateDir}"
+            "OPENCLAW_NIX_MODE=1"
             "MOLTBOT_CONFIG_PATH=${inst.configPath}"
             "MOLTBOT_STATE_DIR=${inst.stateDir}"
             "MOLTBOT_NIX_MODE=1"
