@@ -83,7 +83,13 @@ let
         export PATH="${lib.makeBinPath pluginPackages}:$PATH"
       fi
 
-      ${lib.concatStringsSep "\n" (map (entry: "export ${entry.key}=\"${entry.value}\"") pluginEnvAll)}
+      ${lib.concatStringsSep "\n" (map (entry: ''
+        if [ -f "${entry.value}" ]; then
+          export ${entry.key}="$(cat "${entry.value}")"
+        else
+          export ${entry.key}="${entry.value}"
+        fi
+      '') pluginEnvAll)}
 
       exec "${gatewayPackage}/bin/openclaw" "$@"
     '';
