@@ -151,10 +151,22 @@ in {
       description = "Run Openclaw gateway via launchd (macOS).";
     };
 
+    launchd.label = lib.mkOption {
+      type = lib.types.str;
+      default = "com.steipete.openclaw.gateway";
+      description = "launchd label for the default Openclaw instance.";
+    };
+
     systemd.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Run Openclaw gateway via systemd user service (Linux).";
+    };
+
+    systemd.unitName = lib.mkOption {
+      type = lib.types.str;
+      default = "openclaw-gateway";
+      description = "systemd user service unit name for the default Openclaw instance.";
     };
 
     instances = lib.mkOption {
