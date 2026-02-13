@@ -6058,6 +6058,10 @@ in
           type = t.nullOr (t.str);
           default = null;
         };
+        webhookHost = lib.mkOption {
+          type = t.nullOr (t.str);
+          default = null;
+        };
         webhookPath = lib.mkOption {
           type = t.nullOr (t.str);
           default = null;
@@ -6407,6 +6411,10 @@ in
         default = null;
       };
       tokenFile = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
+      webhookHost = lib.mkOption {
         type = t.nullOr (t.str);
         default = null;
       };
@@ -7315,6 +7323,19 @@ in
       };
       keyPath = lib.mkOption {
         type = t.nullOr (t.str);
+        default = null;
+      };
+    }; });
+      default = null;
+    };
+    tools = lib.mkOption {
+      type = t.nullOr (t.submodule { options = {
+      allow = lib.mkOption {
+        type = t.nullOr (t.listOf (t.str));
+        default = null;
+      };
+      deny = lib.mkOption {
+        type = t.nullOr (t.listOf (t.str));
         default = null;
       };
     }; });
